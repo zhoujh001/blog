@@ -50,6 +50,7 @@ public class AdminController extends Controller {
             index();
             return;
         }
+
     }
 
     /**
