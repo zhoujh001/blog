@@ -75,4 +75,19 @@ public class AdminController extends Controller {
         index();
     }
 
+    /**
+     * 检查用户名是否存在
+     */
+    public void checkUserName() {
+        String username = getPara("username");
+        List<Record> records = Db.find("SELECT * FROM user WHERE username=?", username);
+        if (records != null && records.size() > 0) {
+            //用户名已存在
+            setAttr("checkInfo", "该用户名已经被注册");
+            renderJson();
+        }else {
+            renderNull();
+        }
+    }
+
 }

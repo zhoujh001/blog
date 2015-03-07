@@ -93,17 +93,19 @@
         <div class="modal fade" id="register">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header text-center">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title text-info"><b>用户注册</b></h4>
                     </div>
                     <div class="modal-body form-group">
+
                         <div class="row">
                             <div class="col-lg-6">
                                 <label for="register_username">用户名</label>
                                 <input type="text" class="form-control" id="register_username" name="reg.username"
-                                       required="required"/>
+                                       required="required" onblur="checkUserName();" autofocus="true"/>
+                                <span class="text-danger" id="register_info"></span>
                             </div>
                             <div class="col-lg-6">
                                 <label for="register_password">密码</label>
@@ -111,6 +113,7 @@
                                        required="required"/>
                             </div>
                         </div>
+                        <div class="row">&nbsp;</div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <label for="register_sex">性别</label>
@@ -139,7 +142,24 @@
 <script src="${contextPath}/js/jquery-2.1.1.js"></script>
 <script src="${contextPath}/js/bootstrap.js"></script>
 <script>
+    function checkUserName() {
+        if($("#register_username").val() == '' || $("#register_username").val() == null){
+            return;
+        }
+        $("#register_info").text("");
+        $.ajax({
+                    url:'${contextPath}/admin/checkUserName?username=' + $("#register_username").val(),
+                    async:true,
+                    success:function(data){
+                        $("#register_info").text(data.checkInfo);
 
+                    },
+                    error: function (xhr) {
+                        alert(xhr.responseText);
+                    }
+                }
+        );
+    }
 </script>
 </body>
 </html>
