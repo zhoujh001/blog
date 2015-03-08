@@ -83,10 +83,10 @@ public class AdminController extends Controller {
         List<Record> records = Db.find("SELECT * FROM user WHERE username=?", username);
         if (records != null && records.size() > 0) {
             //用户名已存在
-            setAttr("checkInfo", "该用户名已经被注册");
-            renderJson();
+            //setAttr("checkInfo", "该用户名已经被注册");
+            renderJson("checkInfo", "该用户名已经被注册");
         }else {
-            renderNull();
+            renderJson("checkInfo", "");
         }
     }
 

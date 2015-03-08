@@ -49,11 +49,11 @@
                     </div>
                     <button type="submit" class="btn btn-default">搜索</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a data-toggle="modal" href="#register" role="button">注册</a>
-                    </li>
-                </ul>
+                <%--<ul class="nav navbar-nav navbar-right">--%>
+                    <%--<li>--%>
+                        <%--<a data-toggle="modal" href="#register" role="button">注册</a>--%>
+                    <%--</li>--%>
+                <%--</ul>--%>
             </div>
         </nav>
     </div>
@@ -82,7 +82,16 @@
                         <input type="checkbox" name="remind">记住登录信息<span class="text-danger">（请勿在公用电脑或者网吧内使用此项）</span>
                     </label>
                 </div>
-                <button type="submit" class="btn btn-info btn-block">登录</button>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-info btn-block">登录</button>
+                        </div>
+                        <div class="col-md-3">
+                            <a data-toggle="modal" href="#register" class="btn btn-info btn-block" role="button">注册</a>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -149,7 +158,9 @@
         $("#register_info").text("");
         $.ajax({
                     url:'${contextPath}/admin/checkUserName?username=' + $("#register_username").val(),
+                    method:'get',
                     async:true,
+                    dataType:'json',
                     success:function(data){
                         $("#register_info").text(data.checkInfo);
 
