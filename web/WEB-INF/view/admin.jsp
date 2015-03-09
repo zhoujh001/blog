@@ -58,21 +58,22 @@
         </nav>
     </div>
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
             <span class="text-danger">${loginInfo}</span>
 
             <form action="${contextPath}/admin/login" method="post">
                 <div class="form-group">
-                    <label for="username">用户名:</label>
-                    <input type="text" id="username" name="user.username" class="form-control" required="required"
-                           placeholder="邮箱/账号"/>
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-user"></span>
+                        <input type="text" id="username" name="user.username" class="form-control" required="required"
+                               placeholder="邮箱/账号"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="password">密码:</label>
-
                     <div class="input-group">
-                        <input type="text" id="password" name="user.password" required="required" class="form-control"
+                        <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                        <input type="password" id="password" name="user.password" required="required" class="form-control"
                                placeholder="请输入密码"/>
                         <a href="#" class="input-group-addon">忘记密码?</a>
                     </div>

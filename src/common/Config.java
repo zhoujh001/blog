@@ -48,6 +48,7 @@ public class Config extends JFinalConfig {
 
     @Override
     public void configInterceptor(Interceptors me) {
+        //me.add(new LoginStateCheck());
     }
 
     @Override

@@ -1,6 +1,8 @@
 package controller;
 
+import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
+import interceptor.LoginStateCheck;
 import model.User;
 
 /**
@@ -9,8 +11,6 @@ import model.User;
 public class BlogController extends Controller {
 
     public void index() {
-        User login_user = getModel(User.class);
-        setSessionAttr("login_user", login_user);
         render("index.jsp");
     }
 }

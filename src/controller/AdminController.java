@@ -34,9 +34,7 @@ public class AdminController extends Controller {
             String psw = userList.get(0).get("password");
             if (formUser.get("password").equals(psw)) {
                 //登录成功,跳转到主页
-                if (remindUser != null) {
-                    //表示记录用户的登录状态
-                }
+                setSessionAttr("login_user", userList.get(0));
                 forwardAction("/");
             } else {
                 //密码不正确，返回登录页
