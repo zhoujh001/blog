@@ -35,7 +35,7 @@ public class AdminController extends Controller {
             if (formUser.get("password").equals(psw)) {
                 //登录成功,跳转到主页
                 setSessionAttr("login_user", userList.get(0));
-                forwardAction("/");
+                forwardAction("/blog");
             } else {
                 //密码不正确，返回登录页
                 setAttr("loginInfo", "密码错误！");
@@ -57,7 +57,7 @@ public class AdminController extends Controller {
     public void loginOut() {
         setSessionAttr("login_user", null);
         //返回首页
-        forwardAction("/");
+        forwardAction("/blog");
     }
 
     /**
