@@ -8,9 +8,6 @@ import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.render.ViewType;
-import controller.AdminController;
-import controller.BlogController;
-import interceptor.LoginStateCheck;
 import model.User;
 
 public class Config extends JFinalConfig {
@@ -24,8 +21,9 @@ public class Config extends JFinalConfig {
 
     @Override
     public void configRoute(Routes me) {
-        me.add("/", BlogController.class);
-        me.add("/admin", AdminController.class,"/");
+//        me.add("/", BlogController.class);
+//        me.add("/admin", AdminController.class,"/");
+        me.add(new BaseRoute());
     }
 
     @Override

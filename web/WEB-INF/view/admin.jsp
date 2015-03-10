@@ -17,46 +17,9 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <h1><strong><em>My-Blog</em></strong></h1>
-    </div>
-    <div class="row">
-        <nav class="navbar navbar-inverse">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">首页</a>
-            </div>
+    <%--引入页面头部的jsp文件--%>
+    <%@include file="head.jsp"%>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">发表博客<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">留言</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">个人中心
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">空间</a></li>
-                            <li><a href="#">我的博客</a></li>
-                            <li><a href="#">设置</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="热门话题...">
-                    </div>
-                    <button type="submit" class="btn btn-default">搜索</button>
-                </form>
-                <%--<ul class="nav navbar-nav navbar-right">--%>
-                    <%--<li>--%>
-                        <%--<a data-toggle="modal" href="#register" role="button">注册</a>--%>
-                    <%--</li>--%>
-                <%--</ul>--%>
-            </div>
-        </nav>
-    </div>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">

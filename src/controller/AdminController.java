@@ -70,7 +70,8 @@ public class AdminController extends Controller {
         if (!flag) {
             renderText("注册失败，请稍后重试。。。");
         }
-        index();
+        setAttr("login_user", register_user);
+        forwardAction("/blog");
     }
 
     /**

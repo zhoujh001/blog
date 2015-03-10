@@ -17,138 +17,30 @@
 </head>
 <body>
 <div class="container-fluid">
+    <%@include file="head.jsp"%>
     <div class="row">
-        <h1><strong><em>My-Blog</em></strong></h1>
-    </div>
-    <div id="topbar" class="row">
-        <nav class="navbar navbar-inverse">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#blog">首页</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#blog2">发表博客<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#blog3">留言</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">个人中心
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#blog3">空间</a></li>
-                            <li><a href="#blog2">我的博客</a></li>
-                            <li><a href="#blog">设置</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="热门话题...">
+        <div class="col-md-2 text-center">
+            <div style="height: 100px;background-color: green ">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#" class="thumbnail">
+                            <img src="${contextPath}/img/headimg.png" alt=""/>
+                        </a>
                     </div>
-                    <button type="submit" class="btn btn-default">搜索</button>
-                </form>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <c:if test="${login_user.username != null}">
-                        <li><span class="navbar-text">欢迎您：${login_user.username}</span></li>
-                        <li>
-                            <a href="${contextPath}/admin/loginOut">退出</a>
-                        </li>
-                    </c:if>
-                    <c:if test="${login_user.username == null}">
-                        <li><a href="${contextPath}/admin">登录</a></li>
-                    </c:if>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
-
-    <div id="blog">
-        <h1>Blog</h1>
-        <p>sdfsffffffffffffffffffffffffffffffffff</p>
-    </div>
-    <div style="height: 800px;"></div>
-    <div id="blog2">
-        <h1>Blog2</h1>
-        <p>sdfsffffffffffffffffffffffffffffffffff</p>
-    </div>
-    <div style="height: 800px;"></div>
-    <div id="blog3">
-        <h1>Blog3</h1>
-        <p>sdfsffffffffffffffffffffffffffffffffff</p>
-    </div>
-    <div style="height: 800px;"></div>
-
-
-
-</div>
-<!--<div>
-    <div class="pull-left">
-        <div class="row text-center">
-            <span class="text-info"><b>本周最受欢迎TOP</b></span>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row text-center">
-                    <img class="circle" width="100" height="100" src="dog.jpg" alt="Responsive image">
-                </div>
-                <div class="row text-center">用户1</div>
-            </div>
-            <div class="col-md-6">
-                <div class="row text-center">
-                    <img class="circle" width="100" height="100" src="dog.jpg" alt="Responsive image">
-                </div>
-                <div class="row text-center">用户2</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row text-center">
-                    <img class="circle" width="100" height="100" src="dog.jpg" alt="Responsive image">
-                </div>
-                <div class="row text-center">用户3</div>
-            </div>
-            <div class="col-md-6">
-                <div class="row text-center">
-                    <img class="circle" width="100" height="100" src="dog.jpg" alt="Responsive image">
-                </div>
-                <div class="row text-center">用户3</div>
-            </div>
-        </div>
-    </div>
-    <div class="pull-right">
-        <div class="col-md-4">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                &lt;!&ndash; Wrapper for slides &ndash;&gt;
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img class="circle" src="blog_title.jpg" alt="Responsive image">
-
-                        <div class="carousel-caption">图片1</div>
-                    </div>
-                    <div class="item">
-                        <img class="circle" src="blog_title.jpg" alt="Responsive image">
-
-                        <div class="carousel-caption">图片1</div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            修改资料
+                        </div>
+                        <div class="row">
+                            跟换头像
+                        </div>
                     </div>
                 </div>
-
-                &lt;!&ndash; Controls &ndash;&gt;
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
+        <div class="col-md-8">.col-md-4</div>
+        <div class="col-md-2">.col-md-4</div>
     </div>
-</div>-->
 </div>
 <script src="${contextPath}/js/jquery-2.1.1.js"></script>
 <script src="${contextPath}/js/bootstrap.js"></script>
